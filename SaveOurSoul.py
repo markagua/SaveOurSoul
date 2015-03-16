@@ -515,7 +515,7 @@ def put_letter_on_board_center(boxx, boxy):
 def draw_line():
     for i in range(3):
         y = 0
-        if revealedboxes[i][0] != revealedboxes[i][1] and revealedboxes[i][0] == revealedboxes[i][2] and revealedboxes[i][2] == 'S' and revealedboxes[i][1] == 'O' and revealedboxes[i][0] == 'S':
+        if revealedboxes[i][0] != revealedboxes[i][1] and revealedboxes[i][0] == revealedboxes[i][2] and (revealedboxes[i][2] == 'S' or revealedboxes[i][2] == 'O') and (revealedboxes[i][1] == 'O' or revealedboxes[i][1] == 'S') and (revealedboxes[i][0] == 'S' or revealedboxes[i][0] == 'O'):
 
             if i == 0:
                 if PLAYER_Status == True:
@@ -544,7 +544,7 @@ def draw_line():
                     sword_slash_sound.play()
                     pygame.draw.line(DISPLAYSURF, RED, ((XMARGIN + (2*BoxSize)+ (2*GapSize)+ (BoxSize/2)), (YMARGIN + (BoxSize/2))), ((XMARGIN + (2*BoxSize)+ (2*GapSize)+ (BoxSize/2)), (YMARGIN + (2*BoxSize)+ (2*GapSize)+ (BoxSize/2))), 10)
                     return(True)       
-        if revealedboxes[0][i] != revealedboxes[1][i] and revealedboxes[0][i] == revealedboxes[2][i] and revealedboxes[2][i] == 'S' and revealedboxes[1][i] == 'O' and revealedboxes[0][i] == 'S':
+        if revealedboxes[0][i] != revealedboxes[1][i] and revealedboxes[0][i] == revealedboxes[2][i] and (revealedboxes[2][i] == 'S' or revealedboxes[2][i] == 'O') and (revealedboxes[1][i] == 'O' or revealedboxes[1][i] == 'S') and (revealedboxes[0][i] == 'S' or revealedboxes[0][i] == 'O'):
             if i == 0:
                 if PLAYER_Status == True:                 
                     sword_slash_sound.play()
@@ -573,7 +573,7 @@ def draw_line():
                     pygame.draw.line(DISPLAYSURF, RED, ((XMARGIN + (BoxSize/2)), (YMARGIN + (2*BoxSize) + (2*GapSize) + (BoxSize/2))-10), ((XMARGIN + (2*BoxSize)+ (2*GapSize)+ (BoxSize/2)), (YMARGIN + (2*BoxSize) + (2*GapSize) + (BoxSize/2)-10)), 10)
                     return(True)                    
 
-        if revealedboxes[0][0] != revealedboxes[1][1] and revealedboxes[0][0] == revealedboxes[2][2] and revealedboxes[2][2] == 'S' and revealedboxes[1][1] == 'O' and revealedboxes[0][0] == 'S':          
+        if revealedboxes[0][0] != revealedboxes[1][1] and revealedboxes[0][0] == revealedboxes[2][2] and (revealedboxes[2][2] == 'S' or revealedboxes[2][2] == 'O') and (revealedboxes[1][1] == 'O' or revealedboxes[1][1] == 'S') and (revealedboxes[0][0] == 'S' or revealedboxes[0][0] == 'O'):          
             if PLAYER_Status == True: 
                 sword_slash_sound.play()
                 pygame.draw.line(DISPLAYSURF, BLUE, (XMARGIN + ((BoxSize/2)), (YMARGIN + (BoxSize/2)+10)), ( (XMARGIN + (2*BoxSize) + (2*GapSize) + (BoxSize/2)) , (YMARGIN + (2*BoxSize) + (2*GapSize) + (BoxSize/2))), 10)
@@ -582,7 +582,7 @@ def draw_line():
                 sword_slash_sound.play()
                 pygame.draw.line(DISPLAYSURF, RED, (XMARGIN + ((BoxSize/2)), (YMARGIN + (BoxSize/2)+10)), ( (XMARGIN + (2*BoxSize) + (2*GapSize) + (BoxSize/2)) , (YMARGIN + (2*BoxSize) + (2*GapSize) + (BoxSize/2))), 10)
                 return(True)
-        if revealedboxes[0][2] != revealedboxes[1][1] and revealedboxes[0][2] == revealedboxes[2][0] and revealedboxes[2][0] == 'S' and revealedboxes[1][1] == 'O' and revealedboxes[0][2] == 'S':
+        if revealedboxes[0][2] != revealedboxes[1][1] and revealedboxes[0][2] == revealedboxes[2][0] and (revealedboxes[2][0] == 'S' or revealedboxes[2][0] == 'O') and (revealedboxes[1][1] == 'O' or revealedboxes[1][1] == 'S') and (revealedboxes[0][2] == 'S' or revealedboxes[0][2] == 'O'):
             if PLAYER_Status == True: 
                 sword_slash_sound.play()
                 pygame.draw.line(DISPLAYSURF, BLUE, ((XMARGIN + (BoxSize/2)), (YMARGIN + (2*BoxSize) + (2*GapSize) + (BoxSize/2) ) ), ( (XMARGIN + (2*BoxSize) + (2*GapSize) + (BoxSize/2)), ( YMARGIN + (BoxSize/2)+10)), 10)
